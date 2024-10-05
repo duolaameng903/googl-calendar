@@ -3,6 +3,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.errors import HttpError
 from googleapiclient.discovery import build
+from what_day_is_friday import day
 import urllib.request
 import datetime
 import os.path
@@ -14,8 +15,13 @@ import os.path
 times = [[0, '9:50', '10:30', 'Monday SOURCE'], [0, '10:30', '11:50', 'Monday Block 2'], [0, '12:35', '13:55', 'Monday Block 3'],
          [1, '9:50', '10:30', 'Tuesday SOURCE'], [1, '12:35', '15:20', 'Tuesday Block 3+4'],
          [2, '9:50', '10:30', 'Wednesday SOURCE'], [2, '10:30', '11:50', 'Wednesday Block 2'], [2, '12:35', '13:55', 'Wednesday Block 3'],
-         [3, '8:30', '9:50', 'Thursday Block 1'], [3, '9:50', '10:30', 'Thursday SOURCE'], [3, '10:30', '11:50', 'Thursday Block 2'],
-         [4, '9:44', '10:55', 'Friday Block 2'], [4, '11:35', '12:46', 'Friday Block 3']]
+         [3, '8:30', '9:50', 'Thursday Block 1'], [3, '9:50', '10:30', 'Thursday SOURCE'], [3, '10:30', '11:50', 'Thursday Block 2']]
+
+friday = day()
+
+if friday == "d1":
+  times.append( [4, '9:44', '10:55', 'Friday Block 2'], [4, '11:35', '12:46', 'Friday Block 3'])
+
 
 #?
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
