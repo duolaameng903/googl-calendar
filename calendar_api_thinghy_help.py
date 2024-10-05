@@ -18,9 +18,11 @@ times = [[0, '9:50', '10:30', 'Monday SOURCE'], [0, '10:30', '11:50', 'Monday Bl
          [3, '8:30', '9:50', 'Thursday Block 1'], [3, '9:50', '10:30', 'Thursday SOURCE'], [3, '10:30', '11:50', 'Thursday Block 2']]
 
 friday = day()
+print(friday)
 
 if friday == "d1":
-  times.append( [4, '9:44', '10:55', 'Friday Block 2'], [4, '11:35', '12:46', 'Friday Block 3'])
+  times.append([4, '9:44', '10:55', 'Friday Block 2'])
+  times.append([4, '11:35', '12:46', 'Friday Block 3'])
 
 
 #?
