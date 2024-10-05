@@ -24,6 +24,9 @@ if friday == "d1":
   times.append([4, '9:44', '10:55', 'Friday Block 2'])
   times.append([4, '11:35', '12:46', 'Friday Block 3'])
 
+if friday == "d2":
+  times.append([4, '11:35', '12:46', 'Friday Block 3'])
+  times.append([4, '12:49', '14:00', 'Friday Block 4'])
 
 #?
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
