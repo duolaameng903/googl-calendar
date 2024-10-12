@@ -92,7 +92,7 @@ def main():
                 },
             }
 
-            event = service.events().insert(calendarId=/'@group.calendar.google.com', body=event).execute()
+            event = service.events().insert(calendarId='1fe660f9ed7ac60fe0baf1b4957e3fb7c48cc81c6297027dcc5bd79a9207547e@group.calendar.google.com', body=event).execute()
       except Exception as f:
         pass
   except HttpError as error:
