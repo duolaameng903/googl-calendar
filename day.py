@@ -69,13 +69,17 @@ def main():
     
     for event in events:
       try:
-        if event["summary"] in ['d1', 'd2']:
+        if event["summary"] in ['d1', 'd2', 'no school', 'november break']:
             print(event["start"]["date"])
             print(event["summary"])
             if event["summary"] == 'd1':
                 summary = "Day 1"
             if event["summary"] == 'd2':
                 summary = "Day 2"
+            if event["summary"] in "no school":
+              summary = "No School"
+            if event["summary"] in "november break":
+              summary = "November Break"
             
             event = {
                 'summary': summary,
@@ -86,13 +90,11 @@ def main():
                 'end': {
                     'date': event["end"]["date"] #(next_friday + datetime.timedelta(days=1)).isoformat()
                 },
-                'colorId': "10"
             }
 
-            event = service.events().insert(calendarId='6f48c914a6ab6971da7d71bb297c01b8904fbe4d7f3c1d4edd832e8ecf433eb2@group.calendar.google.com', body=event).execute()
+            event = service.events().insert(calendarId=/'@group.calendar.google.com', body=event).execute()
       except Exception as f:
-        print(f)
-
+        pass
   except HttpError as error:
     print(f"Something went wrong: {error}")
 
